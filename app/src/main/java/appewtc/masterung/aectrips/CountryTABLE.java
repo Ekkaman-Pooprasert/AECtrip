@@ -5,7 +5,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
- * Created by masterUNG on 10/14/15 AD.
+ * Created by Atom on 10/14/15 AD.
  */
 public class CountryTABLE {
 
