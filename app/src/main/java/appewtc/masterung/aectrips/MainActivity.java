@@ -299,10 +299,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         objBuilder.setMessage(detailStrings[intChoose]);
 
-        objBuilder.setCancelable(false);
+        objBuilder.setCancelable(true);
         objBuilder.setPositiveButton("การสื่อสาร", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
+
+                //Intent to TravelActivity
+                Intent objIntent = new Intent(MainActivity.this, TravelActivity.class);
+                objIntent.putExtra("index", intChoose);
+                startActivity(objIntent);
+
                 dialogInterface.dismiss();
             }
         });

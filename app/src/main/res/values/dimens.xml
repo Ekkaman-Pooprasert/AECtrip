@@ -7,6 +7,7 @@
     <dimen name="h2">25sp</dimen>
     <dimen name="icon">60dp</dimen>
     <dimen name="magin">25dp</dimen>
+    <dimen name="icon_list">48dp</dimen>
 
 
 
