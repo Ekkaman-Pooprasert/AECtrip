@@ -52,11 +52,11 @@ public class MyAdapter extends BaseAdapter{
         iconImageView.setImageResource(iconAnInt);
 
         //Thai Word
-        TextView thaiTextView = objView1.findViewById(R.id.textView12);
+        TextView thaiTextView = (TextView) objView1.findViewById(R.id.textView12);
         thaiTextView.setText(thwordStrings[position]);
 
         //คำศัพท์ต่างประเทศ
-        TextView wordTextView = objView1.findViewById(R.id.textView13);
+        TextView wordTextView = (TextView) objView1.findViewById(R.id.textView13);
         wordTextView.setText(wordStrings[position]);
 
         return objView1;
