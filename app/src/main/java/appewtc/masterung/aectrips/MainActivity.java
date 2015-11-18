@@ -92,61 +92,113 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         StrictMode.ThreadPolicy newPolicy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(newPolicy);
 
-        //1. Create InputStream
-        InputStream objInputStream = null;
-        String strJSON = null;
+        int intTimes = 1;
+        while (intTimes <= 2) {
 
-        try {
+            //1. Create InputStream
+            InputStream objInputStream = null;
+            String strJSON = null;
+            HttpPost objHttpPost = null;
+            String strURLcountry = "http://swiftcodingthai.com/aec/php_get_data_country.php";
+            String strURLcommunity = "http://swiftcodingthai.com/aec/php_get_data_community.php";
 
-            HttpClient objHttpClient = new DefaultHttpClient();
-            HttpPost objHttpPost = new HttpPost("http://swiftcodingthai.com/aec/php_get_data_country.php");
-            HttpResponse objHttpResponse = objHttpClient.execute(objHttpPost);
-            HttpEntity objHttpEntity = objHttpResponse.getEntity();
-            objInputStream = objHttpEntity.getContent();
+            try {
 
-        } catch (Exception e) {
-            Log.d("aec", "InputStream ==> " + e.toString());
-        }
+                HttpClient objHttpClient = new DefaultHttpClient();
 
-        //2. Create JSON String
-        try {
+                switch (intTimes) {
+                    case 1:
+                        objHttpPost = new HttpPost(strURLcountry);
+                        break;
+                    case 2:
+                        objHttpPost = new HttpPost(strURLcommunity);
+                        break;
+                }
 
-            BufferedReader objBufferedReader = new BufferedReader(new InputStreamReader(objInputStream, "UTF-8"));
-            StringBuilder objStringBuilder = new StringBuilder();
-            String strLine = null;
+                HttpResponse objHttpResponse = objHttpClient.execute(objHttpPost);
+                HttpEntity objHttpEntity = objHttpResponse.getEntity();
+                objInputStream = objHttpEntity.getContent();
 
-            while ((strLine = objBufferedReader.readLine()) != null) {
-                objStringBuilder.append(strLine);
-            }   // while
+            } catch (Exception e) {
+                Log.d("aec", "InputStream ==> " + e.toString());
+            }
 
-            objInputStream.close();
-            strJSON = objStringBuilder.toString();
+            //2. Create JSON String
+            try {
 
-        } catch (Exception e) {
-            Log.d("aec", "JSON String ==> " + e.toString());
-        }
+                BufferedReader objBufferedReader = new BufferedReader(new InputStreamReader(objInputStream, "UTF-8"));
+                StringBuilder objStringBuilder = new StringBuilder();
+                String strLine = null;
 
-        //3. Update to SQLite
-        try {
+                while ((strLine = objBufferedReader.readLine()) != null) {
+                    objStringBuilder.append(strLine);
+                }   // while
 
-            JSONArray objJsonArray = new JSONArray(strJSON);
+                objInputStream.close();
+                strJSON = objStringBuilder.toString();
 
-            for (int i = 0; i < objJsonArray.length(); i++) {
+            } catch (Exception e) {
+                Log.d("aec", "JSON String ==> " + e.toString());
+            }
 
-                JSONObject object = objJsonArray.getJSONObject(i);
-                String strCountry = object.getString("Country");
-                String strName = object.getString("Name");
-                String strDescription = object.getString("Description");
-                String strLat = object.getString("Lat");
-                String strLng = object.getString("Lng");
-                String strPicture = object.getString("Picture");
-                objCountryTABLE.addNewValue(strCountry, strName, strDescription, strLat, strLng, strPicture);
+            //3. Update to SQLite
+            try {
 
-            }   // for
+                JSONArray objJsonArray = new JSONArray(strJSON);
 
-        } catch (Exception e) {
-            Log.d("aec", "Update ==> " + e.toString());
-        }
+                for (int i = 0; i < objJsonArray.length(); i++) {
+
+                    JSONObject object = objJsonArray.getJSONObject(i);
+
+                    switch (intTimes) {
+                        case 1:
+
+                            String strCountry = object.getString("Country");
+                            String strName = object.getString("Name");
+                            String strDescription = object.getString("Description");
+                            String strLat = object.getString("Lat");
+                            String strLng = object.getString("Lng");
+                            String strPicture = object.getString("Picture");
+                            objCountryTABLE.addNewValue(strCountry, strName, strDescription, strLat, strLng, strPicture);
+
+
+                            break;
+                        case 2:
+
+                            String thWord = object.getString("THword");
+                            String thSound = object.getString("THsound");
+                            String laWord = object.getString("LAword");
+                            String laSound = object.getString("LAsound");
+                            String vnWord = object.getString("VNword");
+                            String vnSound = object.getString("VNsound");
+                            String sgWord = object.getString("SGword");
+                            String sgSound = object.getString("SGsound");
+                            String phWord = object.getString("PHword");
+                            String phSound = object.getString("PHsound");
+                            String mmWord = object.getString("MMword");
+                            String mmSound = object.getString("MMsound");
+                            String idWord = object.getString("IDword");
+                            String idsound = object.getString("IDsound");
+                            String cbWord = object.getString("CBword");
+                            String cbSound = object.getString("CBsound");
+                            String bnWord = object.getString("BNword");
+                            String bnSound = object.getString("BNsound");
+                            String myWord = object.getString("MYword");
+                            String mySound = object.getString("MYsound");
+                            objCommunityTABLE.addCommunity(thWord, thSound, laWord, laSound, vnWord, vnSound,
+                                    sgWord, sgSound, phWord, phSound, mmWord, mmSound, idWord, idsound, cbWord,
+                                    cbSound, bnWord, bnSound, myWord, mySound);
+
+                            break;
+                    }
+                }   // for
+
+            } catch (Exception e) {
+                Log.d("aec", "Update ==> " + e.toString());
+            }
+
+            intTimes += 1;
+        }   //while Loop
 
 
     }   // synJSONtoSQLite
@@ -154,6 +206,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void deleteAllData() {
         SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase("AEC.db", MODE_PRIVATE, null);
         objSqLiteDatabase.delete("countryTABLE", null, null);
+        objSqLiteDatabase.delete("communityTABLE", null, null);
     }
 
     private void testerAddValue() {
@@ -236,8 +289,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String[] detailStrings = getResources().getStringArray(R.array.detail_shot_country);
 
-        final Double[] douLat = {13.751665,17.972833,21.024240,1.287100,14.589029,17.336745,-7.607853,11.564300,4.889848,3.153240};
-        final Double[] douLng = {100.492595,102.618592,105.857866,103.854521,120.974914,96.497252,110.203741,104.931005,114.939256,101.703767};
+        final Double[] douLat = {13.751665, 17.972833, 21.024240, 1.287100, 14.589029, 17.336745, -7.607853, 11.564300, 4.889848, 3.153240};
+        final Double[] douLng = {100.492595, 102.618592, 105.857866, 103.854521, 120.974914, 96.497252, 110.203741, 104.931005, 114.939256, 101.703767};
 
 
         AlertDialog.Builder objBuilder = new AlertDialog.Builder(this);
