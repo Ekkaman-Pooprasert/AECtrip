@@ -16,6 +16,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Double latCenterADouble, lngCenterADouble;
     private LatLng centerLatLng;
     private int countryAnInt; //กำหนด ถูกเลือกมาจากประเทศอะไร?
+    private CountryTABLE objCountryTABLE;
+    private LatLng[] markerLatLngs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +31,32 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //Get Lat&Lng to Center
         getCenterLatLng();
 
-        //Move To Center
-        //moveToCenter();
-
+        //Create LatLng for Marker
+        createLatLngForMarker();
 
     }   // oncreate
 
-    private void moveToCenter() {
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(centerLatLng, 16));
-    }
+    private void createLatLngForMarker() {
+
+        objCountryTABLE = new CountryTABLE(this);
+
+        String[] strLat = objCountryTABLE.readAllCountry(4);
+        String[] strLng = objCountryTABLE.readAllCountry(5);
+
+        Double[] latDoubles = new Double[strLat.length];
+        Double[] lngDoubles = new Double[strLng.length];
+        markerLatLngs = new LatLng[strLat.length];
+
+        for (int i = 0; i < strLat.length; i++) {
+
+            latDoubles[i] = Double.parseDouble(strLat[i]);
+            lngDoubles[i] = Double.parseDouble(strLng[i]);
+
+            markerLatLngs[i] = new LatLng(latDoubles[i], lngDoubles[i]);
+
+        }
+
+    }   //createLatLngForMarker
 
     private void getCenterLatLng() {
         latCenterADouble = getIntent().getDoubleExtra("Lat", 0);
@@ -53,9 +72,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //Assign Center Map Zoom
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(centerLatLng, 6));
 
+
+        //Create All Marker
+        for (int i = 0; i < markerLatLngs.length; i++) {
+
+            mMap.addMarker(new MarkerOptions().position(markerLatLngs[i]));
+        }
+
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(latCenterADouble, lngCenterADouble);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+//        LatLng sydney = new LatLng(latCenterADouble, lngCenterADouble);
+//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker"));
+//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
     }   // onMapsReady
 }   //Main Class
