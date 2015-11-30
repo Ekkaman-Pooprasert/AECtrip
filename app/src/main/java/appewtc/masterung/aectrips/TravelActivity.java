@@ -98,8 +98,10 @@ public class TravelActivity extends AppCompatActivity {
                 intResult = soundMyanmar(soundString);
                 break;
             case 6:
+                intResult = soundIndonesia(soundString);
                 break;
             case 7:
+                intResult = soundCombodia(soundString);
                 break;
             case 8:
                 break;
@@ -109,6 +111,46 @@ public class TravelActivity extends AppCompatActivity {
 
         return intResult;
     }   // soundEffect
+
+    private int soundCombodia(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("cb1")) {
+            intResult = R.raw.cb1;
+        } else if (soundString.equals("cb2")) {
+            intResult = R.raw.cb2;
+        } else if (soundString.equals("cb3")) {
+            intResult = R.raw.cb3;
+        } else if (soundString.equals("cb4")) {
+            intResult = R.raw.cb4;
+        } else if (soundString.equals("cb5")) {
+            intResult = R.raw.cb5;
+        } else if (soundString.equals("cb6")) {
+            intResult = R.raw.cb6;
+        } else if (soundString.equals("cb7")) {
+            intResult = R.raw.cb7;
+        } else if (soundString.equals("cb8")) {
+            intResult = R.raw.cb8;
+        } else if (soundString.equals("cb9")) {
+            intResult = R.raw.cb9;
+        }
+
+        return intResult;
+    }
+
+    private int soundIndonesia(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("id1")) {
+            intResult = R.raw.id1;
+        } else if (soundString.equals("id8")) {
+            intResult = R.raw.id8;
+        } else {
+            intResult = R.raw.no1;
+        }
+
+        return intResult;
+    }
 
     private int soundMyanmar(String soundString) {
         int intResult = R.raw.no1;
