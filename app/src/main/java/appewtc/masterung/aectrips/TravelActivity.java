@@ -104,13 +104,71 @@ public class TravelActivity extends AppCompatActivity {
                 intResult = soundCombodia(soundString);
                 break;
             case 8:
+                intResult = soundBrunei(soundString);
                 break;
             case 9:
+                intResult = soundMalaysia(soundString);
                 break;
         }   //switch
 
         return intResult;
-    }   // soundEffect
+    }   // soundEffect เสียงประเทศ
+
+    private int soundMalaysia(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("my1")) {
+            intResult = R.raw.my1;
+        } else if (soundString.equals("my2")) {
+            intResult = R.raw.my2;
+        } else if (soundString.equals("my3")) {
+            intResult = R.raw.my3;
+        } else if (soundString.equals("my4")) {
+            intResult = R.raw.my4;
+        } else if (soundString.equals("my5")) {
+            intResult = R.raw.my5;
+        } else if (soundString.equals("my6")) {
+            intResult = R.raw.my6;
+        } else if (soundString.equals("my7")) {
+            intResult = R.raw.my7;
+        } else if (soundString.equals("my8")) {
+            intResult = R.raw.my8;
+        } else if (soundString.equals("my9")) {
+            intResult = R.raw.my9;
+        } else {
+            intResult = R.raw.no1;
+        }// มาเลเซีย
+
+        return intResult;
+    }
+
+    private int soundBrunei(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("bu1")) {
+            intResult = R.raw.bn1;
+        } else if (soundString.equals("bn2")) {
+            intResult = R.raw.bn2;
+        } else if (soundString.equals("bn3")) {
+            intResult = R.raw.bn3;
+        } else if (soundString.equals("bn4")) {
+            intResult = R.raw.bn4;
+        } else if (soundString.equals("bn5")) {
+            intResult = R.raw.bn5;
+        } else if (soundString.equals("bn6")) {
+            intResult = R.raw.bn6;
+        } else if (soundString.equals("bn7")) {
+            intResult = R.raw.bn7;
+        } else if (soundString.equals("bn8")) {
+            intResult = R.raw.bn8;
+        } else if (soundString.equals("bn9")) {
+            intResult = R.raw.bn9;
+        } else {
+            intResult = R.raw.no1;
+        }// บรุไน
+
+        return intResult;
+    }
 
     private int soundCombodia(String soundString) {
         int intResult = R.raw.no1;
@@ -133,7 +191,9 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.cb8;
         } else if (soundString.equals("cb9")) {
             intResult = R.raw.cb9;
-        }
+        } else {
+            intResult = R.raw.no1;
+        }//กัมพูชา
 
         return intResult;
     }
@@ -147,7 +207,7 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.id8;
         } else {
             intResult = R.raw.no1;
-        }
+        }//อินโดนีเซีย
 
         return intResult;
     }
@@ -169,7 +229,9 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.mm6;
         } else if (soundString.equals("mm9")) {
             intResult = R.raw.mm9;
-        }
+        } else {
+            intResult = R.raw.no1;
+        }//เมียนม่า
 
         return intResult;
     }
@@ -191,7 +253,7 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.ph9;
         } else {
             intResult = R.raw.no1;
-        }
+        }//ฟิลิปปิน
 
         return intResult;
     }
@@ -219,7 +281,7 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.sg9;
         } else {
             intResult = R.raw.no1;
-        }
+        }//สิงคโปร์
 
         return intResult;
     }
@@ -246,9 +308,8 @@ public class TravelActivity extends AppCompatActivity {
         } else if (soundString.equals("vn9")) {
             intResult = R.raw.vn9;
         } else {
-
             intResult = R.raw.no1;
-        }
+        }//เวียดนาม
 
         return intResult;
     }
@@ -280,7 +341,7 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.no1;
         } else {
             intResult = R.raw.no1;
-        }
+        }//ลาว
 
         return intResult;
     }
@@ -302,7 +363,7 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.no1;
         } else {
             intResult = R.raw.no1;
-        }
+        }//ไทย
 
         return intResult;
     }
