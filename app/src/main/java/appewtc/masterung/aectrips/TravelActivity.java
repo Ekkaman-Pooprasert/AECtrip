@@ -2,13 +2,15 @@ package appewtc.masterung.aectrips;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class TravelActivity extends AppCompatActivity {
 
     //Explicit
     private ListView communityListView;
-    private int indexAnInt;
+    private int indexAnInt, forExtraAnInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +20,7 @@ public class TravelActivity extends AppCompatActivity {
         //Bind Widget
         communityListView = (ListView) findViewById(R.id.listView);
 
-        // Create ListView
+        //Create ListView
         createListView();
 
     }   // Main Method
@@ -42,13 +44,129 @@ public class TravelActivity extends AppCompatActivity {
         CommunityTABLE objCommunityTABLE = new CommunityTABLE(this);
 
         String[] thaiStrings = objCommunityTABLE.readAllData(1);
-        String[] wordStrings = objCommunityTABLE.readAllData(indexAnInt + 1);
+
+        String[] wordStrings = objCommunityTABLE.readAllData(forExtra(indexAnInt));
+
+        final String[] soundString = objCommunityTABLE.readAllData(forSound(indexAnInt));
 
         MyAdapter objMyAdapter = new MyAdapter(TravelActivity.this, iconInts[indexAnInt], thaiStrings, wordStrings);
         communityListView.setAdapter(objMyAdapter);
 
+        communityListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                soundEffect(indexAnInt, soundString[position]);
+
+            }   // event On Click
+        });
+
+    }   //Crate ListView
+
+    private void soundEffect(int indexAnInt, String soundString) {
+
+        switch (indexAnInt) {
+            case 0:
+
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+            case 7:
+                break;
+            case 8:
+                break;
+            case 9:
+                break;
+        }
+
+    }   // soundEffect
+
+    private int forSound(int indexAnInt) {
+
+        int intSound = 0;
+        switch (indexAnInt) {
+            case 0:
+                intSound = 2;
+                break;
+            case 1:
+                intSound = 4;
+                break;
+            case 2:
+                intSound = 6;
+                break;
+            case 3:
+                intSound = 8;
+                break;
+            case 4:
+                intSound = 10;
+                break;
+            case 5:
+                intSound = 12;
+                break;
+            case 6:
+                intSound = 14;
+                break;
+            case 7:
+                intSound = 16;
+                break;
+            case 8:
+                intSound = 18;
+                break;
+            case 9:
+                intSound = 20;
+                break;
+        }   // switch
+
+        return intSound;
     }
 
+    private int forExtra(int indexAnInt) {
+
+        int intExtra = 0;
+        switch (indexAnInt) {
+            case 0:
+                intExtra = 1;
+                break;
+            case 1:
+                intExtra = 3;
+                break;
+            case 2:
+                intExtra = 5;
+                break;
+            case 3:
+                intExtra = 7;
+                break;
+            case 4:
+                intExtra = 9;
+                break;
+            case 5:
+                intExtra = 11;
+                break;
+            case 6:
+                intExtra = 13;
+                break;
+            case 7:
+                intExtra = 15;
+                break;
+            case 8:
+                intExtra = 17;
+                break;
+            case 9:
+                intExtra = 19;
+                break;
+        }
+
+        return intExtra;
+    }
 
 }   // Main Class

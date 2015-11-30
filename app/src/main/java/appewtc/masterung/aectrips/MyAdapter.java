@@ -24,7 +24,7 @@ public class MyAdapter extends BaseAdapter{
         this.iconAnInt = iconAnInt;
         this.thwordStrings = thwordStrings;
         this.wordStrings = wordStrings;
-    }   // Contructor
+    }   // Constructor
 
     @Override
     public int getCount() {
