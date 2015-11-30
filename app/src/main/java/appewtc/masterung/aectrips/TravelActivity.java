@@ -86,12 +86,16 @@ public class TravelActivity extends AppCompatActivity {
                 intResult = soundLaos(soundString);
                 break;
             case 2:
+                intResult = soundVeitnam(soundString);
                 break;
             case 3:
+                intResult = soundSingapore(soundString);
                 break;
             case 4:
+                intResult = soundPhilippines(soundString);
                 break;
             case 5:
+                intResult = soundMyanmar(soundString);
                 break;
             case 6:
                 break;
@@ -105,6 +109,107 @@ public class TravelActivity extends AppCompatActivity {
 
         return intResult;
     }   // soundEffect
+
+    private int soundMyanmar(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("mm1")) {
+            intResult = R.raw.mm1;
+        } else if (soundString.equals("mm2")) {
+            intResult = R.raw.mm2;
+        } else if (soundString.equals("mm3")) {
+            intResult = R.raw.mm3;
+        } else if (soundString.equals("mm4")) {
+            intResult = R.raw.mm4;
+        } else if (soundString.equals("mm5")) {
+            intResult = R.raw.mm5;
+        } else if (soundString.equals("mm6")) {
+            intResult = R.raw.mm6;
+        } else if (soundString.equals("mm9")) {
+            intResult = R.raw.mm9;
+        }
+
+        return intResult;
+    }
+
+    private int soundPhilippines(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("ph1")) {
+            intResult = R.raw.ph1;
+        } else if (soundString.equals("ph2")) {
+            intResult = R.raw.ph2;
+        } else if (soundString.equals("ph3")) {
+            intResult = R.raw.ph3;
+        } else if (soundString.equals("ph4")) {
+            intResult = R.raw.ph4;
+        } else if (soundString.equals("ph6")) {
+            intResult = R.raw.ph6;
+        } else if (soundString.equals("ph9")) {
+            intResult = R.raw.ph9;
+        } else {
+            intResult = R.raw.no1;
+        }
+
+        return intResult;
+    }
+
+    private int soundSingapore(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("sg1")) {
+            intResult = R.raw.sg1;
+        } else if (soundString.equals("sg2")) {
+            intResult = R.raw.sg2;
+        } else if (soundString.equals("sg3")) {
+            intResult = R.raw.sg3;
+        } else if (soundString.equals("sg4")) {
+            intResult = R.raw.sg4;
+        } else if (soundString.equals("sg5")) {
+            intResult = R.raw.sg5;
+        } else if (soundString.equals("sg6")) {
+            intResult = R.raw.sg6;
+        } else if (soundString.equals("sg7")) {
+            intResult = R.raw.sg7;
+        } else if (soundString.equals("sg8")) {
+            intResult = R.raw.sg8;
+        } else if (soundString.equals("sg9")) {
+            intResult = R.raw.sg9;
+        } else {
+            intResult = R.raw.no1;
+        }
+
+        return intResult;
+    }
+
+    private int soundVeitnam(String soundString) {
+        int intResult = R.raw.no1;
+
+        if (soundString.equals("vn1")) {
+            intResult = R.raw.vn1;
+        } else if (soundString.equals("vn2")) {
+            intResult = R.raw.vn2;
+        } else if (soundString.equals("vn3")) {
+            intResult = R.raw.vn3;
+        } else if (soundString.equals("vn4")) {
+            intResult = R.raw.vn4;
+        } else if (soundString.equals("vn5")) {
+            intResult = R.raw.vn5;
+        } else if (soundString.equals("vn6")) {
+            intResult = R.raw.vn6;
+        } else if (soundString.equals("vn7")) {
+            intResult = R.raw.vn7;
+        } else if (soundString.equals("vn8")) {
+            intResult = R.raw.vn8;
+        } else if (soundString.equals("vn9")) {
+            intResult = R.raw.vn9;
+        } else {
+
+            intResult = R.raw.no1;
+        }
+
+        return intResult;
+    }
 
     private int soundLaos(String soundString) {
         int intResult = R.raw.no1;
