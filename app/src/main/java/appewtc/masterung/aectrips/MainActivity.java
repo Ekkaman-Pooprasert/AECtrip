@@ -308,7 +308,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent objIntent = new Intent(MainActivity.this, TravelActivity.class);
                 objIntent.putExtra("index", intChoose);
                 startActivity(objIntent);
-
                 dialogInterface.dismiss();
             }
         });
@@ -319,8 +318,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent objIntent = new Intent(MainActivity.this, MapsActivity.class);
                 objIntent.putExtra("Lat", douLat[intChoose]);
                 objIntent.putExtra("Lng", douLng[intChoose]);
+                objIntent.putExtra("Country", intChoose);
                 startActivity(objIntent);
-
                 dialogInterface.dismiss();
             }
         });
