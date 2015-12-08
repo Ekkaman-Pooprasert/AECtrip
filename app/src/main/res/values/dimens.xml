@@ -9,7 +9,7 @@
     <dimen name="icon">60dp</dimen>
     <dimen name="magin">45dp</dimen>
     <dimen name="icon_list">35dp</dimen>
-
+    <dimen name="image">250dp</dimen>
 
 
 </resources>

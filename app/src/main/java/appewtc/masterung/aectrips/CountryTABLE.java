@@ -33,21 +33,56 @@ public class CountryTABLE {
 
     }   // Constructor
 
+    //Search Name
+    public String[] searchName(String strName) {
+
+        try {
+
+            String[] strResult = null;
+            Cursor objCursor = readSqLiteDatabase.query(COUNTRY_TABLE,
+                    new String[]{COLUMN_ID, COLUMN_COUNTRY, COLUMN_NAME, COLUMN_DESCRIPTION, COLUMN_LAT, COLUMN_LNG, COLUMN_PICTURE},
+                    COLUMN_NAME + "=?",
+                    new String[]{String.valueOf(strName)},
+                    null, null, null, null);
+            if (objCursor != null) {
+
+                if (objCursor.moveToFirst()) {
+                    strResult = new String[objCursor.getColumnCount()];
+                    strResult[0] = objCursor.getString(0);
+                    strResult[1] = objCursor.getString(1);
+                    strResult[2] = objCursor.getString(2);
+                    strResult[3] = objCursor.getString(3);
+                    strResult[4] = objCursor.getString(4);
+                    strResult[5] = objCursor.getString(5);
+                    strResult[6] = objCursor.getString(6);
+                }
+
+            }   //if
+
+            objCursor.close();
+            return strResult;
+
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+
     //Read All Data
     public String[] readAllCountry(int intColumn) {
 
         String[] strResult = null;
         Cursor objCursor = readSqLiteDatabase.query(COUNTRY_TABLE,
                 new String[]{COLUMN_ID,
-                COLUMN_COUNTRY,
-                COLUMN_NAME,
-                COLUMN_DESCRIPTION,
-                COLUMN_LAT,
-                COLUMN_LNG,
-                COLUMN_PICTURE},
+                        COLUMN_COUNTRY,
+                        COLUMN_NAME,
+                        COLUMN_DESCRIPTION,
+                        COLUMN_LAT,
+                        COLUMN_LNG,
+                        COLUMN_PICTURE},
                 null, null, null, null, null);
 
-        if (objCursor!=null) {
+        if (objCursor != null) {
             strResult = new String[objCursor.getCount()];
             objCursor.moveToFirst();
             for (int i = 0; i < objCursor.getCount(); i++) {
