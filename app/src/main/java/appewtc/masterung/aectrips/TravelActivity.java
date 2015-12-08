@@ -30,6 +30,7 @@ public class TravelActivity extends AppCompatActivity {
 
         indexAnInt = getIntent().getIntExtra("index", 0);
 
+
         int[] iconInts = new int[10];
         iconInts[0] = R.drawable.thailand48;
         iconInts[1] = R.drawable.laos48;
