@@ -42,6 +42,8 @@
         </activity>
         <activity android:name=".TravelActivity" >
         </activity>
+        <activity android:name=".MarkerDetailActivity" >
+        </activity>
     </application>
 
 </manifest>
