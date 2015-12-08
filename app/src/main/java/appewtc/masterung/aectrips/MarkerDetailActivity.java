@@ -10,6 +10,7 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -45,6 +46,20 @@ public class MarkerDetailActivity extends AppCompatActivity {
         showview();
 
     }   // Main Method
+
+        public void clicCalculate(View view) {
+
+            Double x1Double = Double.parseDouble(myLatTextView.getText().toString());
+            Double y1Double = Double.parseDouble(myLngTextView.getText().toString());
+            Double x2Double = Double.parseDouble(latString);
+            Double y2Double = Double.parseDouble(lngString);
+
+            Double distantDouble = Math.sqrt(Math.pow((x1Double-x2Double), 2)+Math.pow((y1Double-y2Double), 2)) * 111.0;
+
+            distantTextView.setText((String.format("%.2f", distantDouble))+ "km.");
+
+
+        }   //Click Calculate
 
     @Override
     protected void onStart() {
