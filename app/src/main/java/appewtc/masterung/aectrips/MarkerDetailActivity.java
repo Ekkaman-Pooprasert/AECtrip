@@ -11,9 +11,10 @@ import com.squareup.picasso.Picasso;
 public class MarkerDetailActivity extends AppCompatActivity {
 
     //Explicit
-    private TextView titleTextView, detailTextView;
+    private TextView titleTextView, detailTextView, myLatTextView, myLngTextView, distantTextView;
     private String titleString, descriptionString, latString, lngString, pictureString;
     private ImageView markerImageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +62,7 @@ public class MarkerDetailActivity extends AppCompatActivity {
         //show image
         Picasso.with(MarkerDetailActivity.this)
                 .load(pictureString)
-                .resize(250, 250)
+                .resize(200, 200)
                 .into(markerImageView);
 
         // Show Detail
@@ -74,5 +75,8 @@ public class MarkerDetailActivity extends AppCompatActivity {
         titleTextView =(TextView) findViewById(R.id.textView14);
         markerImageView = (ImageView) findViewById(R.id.imageView12);
         detailTextView = (TextView) findViewById(R.id.textView15);
+        myLatTextView = (TextView) findViewById(R.id.textView17);
+        myLngTextView = (TextView) findViewById(R.id.textView18);
+        distantTextView = (TextView) findViewById(R.id.textView19);
     }
 }   //Main Class
