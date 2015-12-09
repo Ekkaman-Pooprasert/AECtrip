@@ -134,7 +134,15 @@ public class TravelActivity extends AppCompatActivity {
         } else if (soundString.equals("my8")) {
             intResult = R.raw.my8;
         } else if (soundString.equals("my9")) {
-            intResult = R.raw.my9;
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("my10")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("my11")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("my12")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("my13")) {
+            intResult = R.raw.no1;//
         } else {
             intResult = R.raw.no1;
         }// มาเลเซีย
@@ -163,6 +171,14 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.bn8;
         } else if (soundString.equals("bn9")) {
             intResult = R.raw.bn9;
+        } else if (soundString.equals("bn10")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("bn11")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("bn12")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("bn13")) {
+            intResult = R.raw.no1;//
         } else {
             intResult = R.raw.no1;
         }// บรุไน
@@ -191,6 +207,14 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.cb8;
         } else if (soundString.equals("cb9")) {
             intResult = R.raw.cb9;
+        } else if (soundString.equals("cb10")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("cb11")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("cb12")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("cb13")) {
+            intResult = R.raw.no1;//
         } else {
             intResult = R.raw.no1;
         }//กัมพูชา
@@ -227,8 +251,20 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.mm5;
         } else if (soundString.equals("mm6")) {
             intResult = R.raw.mm6;
+        } else if (soundString.equals("mm7")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("mm8")) {
+            intResult = R.raw.no1;//
         } else if (soundString.equals("mm9")) {
-            intResult = R.raw.mm9;
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("mm10")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("mm11")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("mm12")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("mm13")) {
+            intResult = R.raw.no1;//
         } else {
             intResult = R.raw.no1;
         }//เมียนม่า
@@ -251,6 +287,20 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.ph6;
         } else if (soundString.equals("ph9")) {
             intResult = R.raw.ph9;
+        } else if (soundString.equals("ph5")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("ph7")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("ph8")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("ph10")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("ph11")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("ph12")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("ph13")) {
+            intResult = R.raw.no1;//
         } else {
             intResult = R.raw.no1;
         }//ฟิลิปปิน
@@ -279,6 +329,14 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.sg8;
         } else if (soundString.equals("sg9")) {
             intResult = R.raw.sg9;
+        } else if (soundString.equals("sg10")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("sg11")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("sg12")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("sg13")) {
+            intResult = R.raw.no1;//
         } else {
             intResult = R.raw.no1;
         }//สิงคโปร์
@@ -307,6 +365,14 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.vn8;
         } else if (soundString.equals("vn9")) {
             intResult = R.raw.vn9;
+        } else if (soundString.equals("vn10")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("vn11")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("vn12")) {
+            intResult = R.raw.no1;//
+        } else if (soundString.equals("vn13")) {
+            intResult = R.raw.no1;//
         } else {
             intResult = R.raw.no1;
         }//เวียดนาม
@@ -332,13 +398,17 @@ public class TravelActivity extends AppCompatActivity {
         } else if (soundString.equals("la9")) {
             intResult = R.raw.la9;
         } else if (soundString.equals("la10")) {
-            intResult = R.raw.no1;
+            intResult = R.raw.la10;
         } else if (soundString.equals("la11")) {
             intResult = R.raw.no1;
         } else if (soundString.equals("la12")) {
-            intResult = R.raw.no1;
+            intResult = R.raw.la12;
         } else if (soundString.equals("la7")) {
-            intResult = R.raw.no1;
+            intResult = R.raw.la7;
+        } else if (soundString.equals("la1")) {
+            intResult = R.raw.la1;
+        } else if (soundString.equals("la13")) {
+            intResult = R.raw.la13;
         } else {
             intResult = R.raw.no1;
         }//ลาว
@@ -360,7 +430,21 @@ public class TravelActivity extends AppCompatActivity {
         } else if (soundString.equals("th6")) {
             intResult = R.raw.th6;
         } else if (soundString.equals("th12")) {
-            intResult = R.raw.no1;
+            intResult = R.raw.th12;
+        } else if (soundString.equals("th5")) {
+            intResult = R.raw.th5;
+        } else if (soundString.equals("th7")) {
+            intResult = R.raw.th7;
+        } else if (soundString.equals("th8")) {
+            intResult = R.raw.th8;
+        } else if (soundString.equals("th9")) {
+            intResult = R.raw.th9;
+        } else if (soundString.equals("th10")) {
+            intResult = R.raw.th10;
+        } else if (soundString.equals("th11")) {
+            intResult = R.raw.th11;
+        } else if (soundString.equals("th13")) {
+            intResult = R.raw.th13;
         } else {
             intResult = R.raw.no1;
         }//ไทย
