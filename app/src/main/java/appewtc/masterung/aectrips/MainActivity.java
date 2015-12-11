@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //ImageView Controller
         imageViewController();
 
-    }   // Main Method
+    }   // Main Method /
 
     private void imageViewController() {
         thaiImageView.setOnClickListener(this);
