@@ -91,7 +91,7 @@ public class MarkerDetailActivity extends AppCompatActivity {
         String strLat = "Unknow";
         String strLng = "Unknow";
 
-        Location networkLocation = requestUpdateFromProvider(LocationManager.NETWORK_PROVIDER, "Not Connected Internet");
+        Location networkLocation = requestUpdateFromProvider(LocationManager.NETWORK_PROVIDER, "Do not Connected Internet");
         if (networkLocation != null) {
             strLat = String.format("%.7f", networkLocation.getLatitude());
             strLng = String.format("%.7f", networkLocation.getLongitude());

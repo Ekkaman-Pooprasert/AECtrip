@@ -229,6 +229,10 @@ public class TravelActivity extends AppCompatActivity {
             intResult = R.raw.id1;
         } else if (soundString.equals("id8")) {
             intResult = R.raw.id8;
+        } else if (soundString.equals("id10")) {
+            intResult = R.raw.no1;
+        } else if (soundString.equals("id11")) {
+            intResult = R.raw.no1;
         } else {
             intResult = R.raw.no1;
         }//อินโดนีเซีย
